@@ -6,19 +6,15 @@
 			name="viewport"
 			content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
 		/>
-		<meta name="description" content="Talk - A free video call app for the web." />
-		<meta
-			name="keywords"
-			content="group video chat, video communication, multiparty video chat, video chat, webrtc, peer to peer, p2p"
-		/>
+		<meta name="description" content="Talk - Kostenlose Videoanrufe" />
 		<meta name="application-name" content="Talk" />
 		<!-- Meta data for link fetching -->
 		<meta property="og:url" content="https://usetalk.io" />
 		<meta property="og:image" content="https://usetalk.io/icon.png" />
-		<meta property="og:title" content="Talk - Free group video call for the web" />
+		<meta property="og:title" content="Talk - Kostenlose Videoanrufe" />
 		<meta
 			property="og:description"
-			content="Talk is a free & open-source video conference app for the web. Works in all major browsers. No signups. No downloads. 100% peer-to-peer."
+			content="Herzlich Willkommen bei Talk! Kostenlose Videokonferenzen mit End-zu-End Verschlüsselung."
 		/>
 		<meta name="robots" content="noindex">
 
@@ -30,9 +26,7 @@
 		<script defer src="vue.min.js"></script>
 		<script defer src="app.js"></script>
 		<script defer src="script.js"></script>
-		<title>Talk - Free group video call for the web</title>
-		<!-- Below line is an alytics script. Delete it if you are deploying it on your own cloud  -->
-		<script async defer src="https://stats.usetalk.io/hello.js"></script>
+		<title>Talk - Kostenlose Videoanrufe</title>
 	</head>
 
 	<body>
@@ -40,7 +34,7 @@
 		<main id="app" v-bind:style="'display:block'">
 			<div id="intro" v-if="showIntro && !showChat && !showSettings">
 				<p>
-					<strong>Herzlich Willkommen</strong> bei Talkk! <br /> Videokonferenzen mit End-zu-End Verschlüsselung.
+					<strong>Herzlich Willkommen</strong> bei Talk! <br /> Videokonferenzen mit End-zu-End Verschlüsselung.
 				</p>
 				<p>
 					<small>
@@ -61,10 +55,10 @@
 						<span class="date light"> &middot; {{formatDate(chat.date)}}</span>
 						<div class="message">{{chat.message}}</div>
 					</div>
-					<div id="noChat" class="light" v-if="!chats.length"><small>No chat messages.</small></div>
+					<div id="noChat" class="light" v-if="!chats.length"><small>Keine Nachrichten.</small></div>
 				</div>
 				<div id="composeBox">
-					<div id="placeholder" v-if="typing.length <= 0">Type message...</div>
+					<div id="placeholder" v-if="typing.length <= 0">Schreibe etwas...</div>
 					<div
 						id="compose"
 						contenteditable="true"
@@ -73,11 +67,11 @@
 						v-on:paste="paste($event)"
 					></div>
 				</div>
-				<small class="light">Press enter to submit</small>
+				<small class="light">Klicke Enter zum Senden</small>
 			</div>
 
 			<div id="settings" v-if="showSettings">
-				<div class="label">Camera 📹</div>
+				<div class="label">Kamera 📹</div>
 				<div v-for="(videoDevice, i) in videoDevices" v-bind:key="videoDevice.deviceId">
 					<div
 						v-bind:class="'link '+(selectedVideoDeviceId === videoDevice.deviceId ? 'active' : '')"
@@ -87,7 +81,7 @@
 					</div>
 				</div>
 
-				<div class="label">Microphone 🎙️</div>
+				<div class="label">Mikrofon 🎙️</div>
 				<div v-for="(audioDevice, i) in audioDevices" v-bind:key="audioDevice.deviceId">
 					<div
 						v-bind:class="'link '+(selectedAudioDeviceId === audioDevice.deviceId ? 'active' : '')"
